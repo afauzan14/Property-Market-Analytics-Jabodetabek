@@ -1,80 +1,80 @@
-# 🏢 Jabodetabek Real Estate Market Analysis & Data Governance Audit
+# 🏢 Residential Property Market Analytics & Data Governance Audit
+### Multi-City Exploratory Data Analysis (EDA), Data Quality Engineering, and Rp 25 Billion Investment Allocation Strategy for RPPI
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Jupyter Notebook](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white)
-![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
-![Seaborn](https://img.shields.io/badge/Seaborn-4C72B0?style=for-the-badge&logo=seaborn&logoColor=white)
-![Domain](https://img.shields.io/badge/Domain-Real%20Estate%20Analytics-brightgreen?style=for-the-badge)
-
----
-
-## 📌 Ringkasan Proyek & Business Understanding
-
-**Real Property Prima Indonesia (RPPI)** adalah perusahaan agen properti yang beroperasi di wilayah aglomerasi Jabodetabek (Jakarta, Bogor, Depok, Tangerang, dan Bekasi). Untuk mempertahankan keunggulan kompetitif dan bertransformasi menjadi *data-driven company*, manajemen RPPI memerlukan wawasan mendalam mengenai dinamika pasar properti sekaligus mengevaluasi kualitas data internal yang dihimpun dari berbagai cabang.
-
-Proyek ini bertujuan untuk menyelesaikan beberapa permasalahan strategis bisnis:
-1. **Audit Kualitas Data:** Mengidentifikasi anomali, inkonsistensi penulisan satuan, missing values, dan memberikan rekomendasi teknis perbaikan ke tim *Data Engineer (DE)* dan *Database Administrator (DBA)*.
-2. **Analisis Disparitas Harga Antar Wilayah:** Menganalisis sebaran harga properti lintas kota untuk memahami disparitas nilai dan faktor pendorong tingginya harga di pusat megapolitan.
-3. **Rekomendasi Ekspansi Kantor Cabang:** Menentukan wilayah paling prospektif untuk pembukaan kantor cabang baru berbasis volume listing dan aktivitas pasar.
-4. **Profil Hunian Terlaris:** Mengidentifikasi karakteristik properti (luas tanah, luas bangunan, fasilitas kamar tidur/mandi, daya listrik, dan arah hadap) yang paling banyak diserap oleh konsumen.
-5. **Optimasi Portofolio Investasi Rp 25 Miliar:** Merumuskan strategi alokasi modal belanja properti untuk memaksimalkan potensi imbal hasil (*capital gain*) dan likuiditas dengan mitigasi risiko legalitas.
+[![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![Jupyter Notebook](https://img.shields.io/badge/Notebook-Jupyter-orange?logo=jupyter&logoColor=white)](Study_Case_01_Kelompok_E_DatMin_DS2.ipynb)
+[![Pandas](https://img.shields.io/badge/Pandas-150458?logo=pandas&logoColor=white)](https://pandas.pydata.org/)
+[![Seaborn](https://img.shields.io/badge/Seaborn-4C72B0?logo=seaborn&logoColor=white)](https://seaborn.pydata.org/)
+[![Domain](https://img.shields.io/badge/Domain-Property%20Analytics-brightgreen)]()
 
 ---
 
-## 🔬 Metodologi Analisis & Data Cleansing
+## 📌 Project Overview & Business Understanding
 
-Dataset terdiri dari data listing properti mentah di 5 wilayah (Jakarta, Bogor, Depok, Tangerang, dan Bekasi) yang melalui tahapan integrasi dan pembersihan data terstruktur:
+**Real Property Prima Indonesia (RPPI)** is a residential property brokerage operating across the Greater Jakarta metropolitan agglomeration—**Jabodetabek (*Jakarta, Bogor, Depok, Tangerang, and Bekasi*)**. To maintain market leadership and accelerate its transformation into a *data-driven enterprise*, RPPI's executive management requires empirical intelligence regarding regional property pricing, buyer preferences, and internal data quality across local branches.
 
-1. **Audit & Penyeragaman Satuan:** Menangani ketiadaan satuan baku pada data mentah (khususnya harga serta Luas Tanah/Bangunan di wilayah Depok dan Tangerang) serta mengonversi format nilai ke dalam standar mata uang Rupiah (`IDR`) dan satuan meter persegi (`m²`).
-2. **Noise & Uninformative Feature Removal:** Menghapus kolom artifak tak berguna (seperti kolom `Unnamed`), baris kosong/duplikat akibat scraping/input manual, serta standardisasi label kategorik (sertifikat, arah hadap properti).
-3. **Penanganan Missing Values & Outlier:** Imputasi nilai kosong pada variabel spesifikasi fisik dan pemisahan analisis *outlier* (lahan berskala > 3.000 m²) untuk segmen investasi khusus.
-4. **Integrasi Data Multi-Wilayah (`dataGab`):** Menggabungkan seluruh data terstandarisasi ke dalam satu entitas data gabungan untuk perbandingan komparatif lintas kota menggunakan statistik deskriptif dan visualisasi distribusi (*Catplot, Barplot, Histplot, Swarmplot, Scatterplot*).
-
----
-
-## 📊 Temuan Kunci (Key Findings)
-
-### 1. Komparasi Pasar Properti Antar Kota Jabodetabek
-
-| Kota | Karakteristik Sebaran Harga | Volume Listing | Potensi Pasar & Karakteristik Wilayah |
-| :--- | :--- | :--- | :--- |
-| **Jakarta** | Sangat variatif, dispersi harga tertinggi (hingga segmen ultra-luxury) | Menengah | Pusat bisnis dan ekonomi; didorong urbanisasi tinggi dan keterbatasan lahan ekstrem |
-| **Bogor** | Terkonsentrasi di segmen terjangkau (< Rp 2 Miliar) | **Tertinggi** | Pasar residensial paling aktif; preferensi lingkungan nyaman dan hunian keluarga |
-| **Tangerang** | Rentang harga menengah ke atas, variasi cukup tinggi | Tinggi | Aksesibilitas cepat ke pusat bisnis Jakarta; berkembang pesat untuk segmen *middle-up* |
-| **Depok** | Dominasi segmen ramah anggaran (< Rp 2 Miliar) | Sedang | Area komuter dengan permintaan hunian tapak pertama (*first-time buyers*) yang kuat |
-| **Bekasi** | Terkonsentrasi di segmen harga ekonomis/kompetitif | Menengah-Rendah | Kawasan industri dan residensial penyangga dengan perputaran harga stabil |
+This project addresses five critical business objectives:
+1. **Data Governance & Hygiene Audit:** Identifying schema anomalies, non-standardized units, and missing values to formulate architectural recommendations for the **Data Engineering (DE) & Database Administration (DBA)** teams.
+2. **Cross-Regional Price Disparity Analysis:** Evaluating property valuation dynamics across 5 cities to explain premium price concentrations in metropolitan business centers.
+3. **Strategic Branch Expansion:** Recommending optimal city locations for RPPI's next branch office based on listing volume and transaction liquidity.
+4. **Best-Selling Residential Archetypes:** Profiling high-demand property specifications (land/building area, bedroom/bathroom configurations, electricity capacity, and cardinal orientation).
+5. **Rp 25 Billion Investment Portfolio Strategy:** Designing an optimal capital allocation framework to acquire high-yield properties while mitigating legal title risks.
 
 ---
 
-### 2. Profil Hunian yang Paling Banyak Diminati & Dijual
+## 🔬 Methodology & Data Preprocessing Pipeline
 
-Berdasarkan analisis visualisasi distribusi data gabungan, karakteristik rumah yang mencatatkan serapan pasar tertinggi memiliki spesifikasi:
+The dataset integrates raw property listings from 5 distinct regional markets (Jakarta, Bogor, Depok, Tangerang, and Bekasi), processed through a systematic data hygiene pipeline:
 
-| Parameter Fisik | Karakteristik Paling Diminati | Interpretasi Bisnis |
+1. **Unit Standardization & Schema Alignment:** Resolved ambiguous unit scales in raw listings (notably price values and building/land dimensions in Depok and Tangerang), standardizing all currency to Indonesian Rupiah (`IDR`) and spatial metrics to square meters (`m²`).
+2. **Noise & Uninformative Column Stripping:** Removed artifact index columns (such as `Unnamed`), deduplicated scraped records, and regularized categorical labels (property titles and cardinal orientation).
+3. **Missing Value Imputation & Outlier Segregation:** Handled incomplete property specifications and isolated large-scale land outliers (*lahan luas > 3,000 m²*) for targeted investment banking analysis.
+4. **Unified Multi-City Integration (`dataGab`):** Merged cleaned regional sub-tables into a master dataset (`dataGab`) for comparative cross-city exploratory analysis using statistical distributions (*Catplot, Barplot, Histplot, Swarmplot, Scatterplot*).
+
+---
+
+## 📊 Key Findings
+
+### 1. Cross-Regional Property Market Comparison
+
+| City / Region | Price Distribution Characteristics | Listing Volume | Market Dynamics & Strategic Persona |
+| :--- | :--- | :---: | :--- |
+| **Jakarta** | Broadest dispersion; highest concentration of ultra-luxury properties | Moderate | National economic and financial hub; driven by extreme land scarcity and continuous urban migration |
+| **Bogor** | Concentrated in budget-friendly brackets (< Rp 2 Billion) | **Highest** | Most liquid residential volume; strong preference for tranquil, family-oriented suburban living |
+| **Tangerang** | Upper-middle price distribution with high variance | High | Rapid commercial development; premier suburban commuter belt with fast transit access to Central Jakarta |
+| **Depok** | Strongly clustered in affordable entry-level tiers (< Rp 2 Billion) | Moderate | Vital educational and commuter corridor with robust demand from first-time home buyers |
+| **Bekasi** | Highly affordable, competitive baseline pricing | Moderate-Low | Major industrial and manufacturing support hub offering stable, economical family housing |
+
+---
+
+### 2. High-Demand Property Archetype (Best-Selling Profiles)
+
+Empirical distribution analysis across the unified dataset identifies the highest-velocity residential properties:
+
+| Physical Parameter | Highest-Demand Characteristic | Business & Market Interpretation |
 | :--- | :--- | :--- |
-| **Luas Bangunan (LB)** | `< 100 m²` | Rumah kompak/minimalis mendominasi; efisiensi biaya perawatan dan harga beli |
-| **Luas Tanah (LT)** | `< 500 m²` (Mayoritas < 150 m²) | Preferensi hunian modern tapak kompak di kawasan urban-suburban |
-| **Kamar Tidur (KT)** | 2 hingga 3 Kamar | Ideal untuk keluarga muda (nuklir) yang menjadi segmen pembeli mayoritas |
-| **Kamar Mandi (KM)** | 2 hingga 4 Kamar | Standar kenyamanan harian tanpa memicu antrean fasilitas sanitasi |
-| **Fasilitas Carport** | 1 Mobil | Kapasitas parkir standar untuk satu kendaraan roda empat pribadi |
-| **Kapasitas Listrik** | `2.200 VA` s.d. `4.400 VA` | Rentang daya optimal untuk kebutuhan elektronik rumah tangga modern |
-| **Arah Hadap** | **Menghadap Timur** | Mendapat pencahayaan alami matahari pagi dan menghindari panas terik sore hari |
+| **Building Area (*Luas Bangunan / LB*)** | `< 100 m²` | Compact, minimalist floor plans dominate; minimizes maintenance and upfront purchase barriers |
+| **Land Area (*Luas Tanah / LT*)** | `< 500 m²` (predominantly < 150 m²) | Strong consumer preference for compact modern landed houses (*rumah tapak*) in suburban clusters |
+| **Bedrooms (*Kamar Tidur / KT*)** | 2 to 3 Bedrooms | Ideal layout for nuclear families, the largest demographic segment in the housing market |
+| **Bathrooms (*Kamar Mandi / KM*)** | 2 to 4 Bathrooms | Standard residential convenience accommodating daily family routines |
+| **Carport Capacity** | 1 Vehicle | Standardized off-street parking for private family cars |
+| **Electrical Capacity** | `2,200 VA` to `4,400 VA` | Optimal utility threshold for middle-class household electronic appliances and air conditioning |
+| **Cardinal Facing (*Arah Hadap*)** | **East-Facing (*Menghadap Timur*)** | Maximizes natural morning sunlight while avoiding intense afternoon heat |
 
 ---
 
-## 💡 Rekomendasi Strategis & Bisnis
+## 💡 Strategic Recommendations for Management & Data Engineering
 
-### 1. Tata Kelola Data (*Data Governance*) untuk Tim Data Engineer (DE) & Database Administrator (DBA)
-* **Standardisasi Format Input:** Terapkan skema validasi ketat pada sistem pemasukan data (*entry form*) dengan satuan baku yang eksplisit (misal: Harga dalam juta Rupiah, LT/LB dalam m², Listrik dalam VA/Watt).
-* **Eliminasi Anomali & Redundansi:** Hapus permanen kolom indeks artifak (`Unnamed`), sediakan validasi *regex* untuk kolom kategorik (arah hadap dan jenis sertifikat), serta bangun pipeline ETL terpusat agar data antar kantor cabang tidak memiliki schema drift.
-* **Hierarki Lokasi Terstruktur:** Lakukan normalisasi basis data dengan mencatat lokasi bertingkat (Provinsi > Kota/Kabupaten > Kecamatan > Kelurahan) guna mempermudah analisis spasial mikro.
+### 1. Data Governance for Data Engineering (DE) & Database Administration (DBA)
+* **Strict Input Validation Schemas:** Implement mandatory input validation at data ingestion points with explicit units (e.g., Price in Millions of IDR, Land/Building Area in $\text{m}^2$, Electricity in VA).
+* **Elimination of Schema Drift:** Deprecate unindexed artifact fields (`Unnamed`), enforce *regex* constraints on categorical fields (orientation and certificate types), and automate ETL pipelines across regional branch databases.
+* **Hierarchical Spatial Normalization:** Normalize geographic entities into a structured relational hierarchy (*Province > Regency/City > District / Kecamatan > Sub-district / Kelurahan*) to unlock micro-spatial geospatial analytics.
 
-### 2. Ekspansi Kantor Cabang Baru
-* **Prioritas Utama: Kota Bogor**
-  * **Justifikasi Data:** Bogor mencatatkan volume listing properti tertinggi di antara seluruh wilayah Jabodetabek, menandakan perputaran pasar yang sangat likuid.
-  * **Strategi Penetrasi:** Menempatkan kantor cabang di Bogor akan mendekatkan RPPI langsung ke ekosistem pemilik properti dan pembeli segmen *family-oriented*, memaksimalkan konversi komisi agen.
+### 2. Strategic Branch Expansion: Prioritize Bogor
+* **Data Justification:** Bogor accounts for the largest aggregate listing volume across the metropolitan area, signaling high transaction velocity and market depth.
+* **Commercial Impact:** Establishing RPPI's next branch office in Bogor positions the firm closest to high-volume residential sellers and family buyers, maximizing transaction commission revenues.
 
-### 3. Alokasi Modal Investasi Rp 25 Miliar
-* **Strategi Diversifikasi Multi-Unit (Likuiditas Tinggi):** Alokasikan modal utama untuk mengakuisisi unit rumah dengan harga < Rp 2 Miliar di koridor **Depok, Bogor, dan Bekasi**. Segmen ini memiliki pasar pembeli paling luas (*broadest target market*) sehingga risiko likuiditas saat *resale* jauh lebih rendah.
-* **Prioritas Sertifikasi Legalitas SHM:** Fokuskan transaksi pada aset bersertifikat **Sertifikat Hak Milik (SHM)** atau paket **SHM + IMB/PBG + PBB** guna menjamin keamanan hak atas tanah dan mempermudah pembiayaan KPR bagi pembeli berikutnya.
-* **Peluang Land Banking (Kavling Lahan Outlier):** Pertimbangkan alokasi selektif pada lahan luas (outlier > 3.000 m²) yang bernilai miring untuk dipecah (*split*) menjadi beberapa unit kavling siap bangun (*land subdivision*) demi menghasilkan margin *capital gain* berlipat.
+### 3. Rp 25 Billion Investment Allocation Strategy
+* **High-Liquidity Multi-Unit Portfolio (< Rp 2 Billion):** Allocate the majority of capital to acquire residential units priced under Rp 2 Billion within the **Depok, Bogor, and Bekasi** corridors. This segment commands the broadest buyer base, ensuring rapid liquidity and minimal holding period risk during resale.
+* **Priority on Secure Land Titling:** Focus acquisitions strictly on freehold property titles—**SHM (*Sertifikat Hak Milik*)** or complete bundles (**SHM + IMB/PBG + PBB**)—to guarantee legal safety and facilitate mortgage financing (KPR) for subsequent buyers.
+* **Strategic Land Subdivision (*Kavling / Land Banking*):** Selectively allocate capital to discounted, oversized land plots (outliers $> 3,000 \text{ m}^2$) to subdivide (*pecah sertifikat*) into ready-to-build residential parcels, unlocking exponential capital gain margins.
