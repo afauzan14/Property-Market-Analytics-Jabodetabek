@@ -1,4 +1,4 @@
-# 🏢 Residential Property Market Analytics & Data Governance Audit
+# Residential Property Market Analytics & Data Governance Audit
 ### Multi-City Exploratory Data Analysis (EDA), Data Quality Engineering, and Rp 25 Billion Investment Allocation Strategy for RPPI
 
 [![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)](https://www.python.org/)
@@ -9,7 +9,7 @@
 
 ---
 
-## 📌 Project Overview & Business Understanding
+## Project Overview & Business Understanding
 
 **Real Property Prima Indonesia (RPPI)** is a residential property brokerage operating across the Greater Jakarta metropolitan agglomeration—**Jabodetabek (*Jakarta, Bogor, Depok, Tangerang, and Bekasi*)**. To maintain market leadership and accelerate its transformation into a *data-driven enterprise*, RPPI's executive management requires empirical intelligence regarding regional property pricing, buyer preferences, and internal data quality across local branches.
 
@@ -22,7 +22,7 @@ This project addresses five critical business objectives:
 
 ---
 
-## 🔬 Methodology & Data Preprocessing Pipeline
+## Methodology & Data Preprocessing Pipeline
 
 The dataset integrates raw property listings from 5 distinct regional markets (Jakarta, Bogor, Depok, Tangerang, and Bekasi), processed through a systematic data hygiene pipeline:
 
@@ -33,7 +33,7 @@ The dataset integrates raw property listings from 5 distinct regional markets (J
 
 ---
 
-## 📊 Key Findings
+## Key Findings
 
 ### 1. Cross-Regional Property Market Comparison
 
@@ -63,7 +63,7 @@ Empirical distribution analysis across the unified dataset identifies the highes
 
 ---
 
-## 💡 Strategic Recommendations for Management & Data Engineering
+## Strategic Recommendations for Management & Data Engineering
 
 ### 1. Data Governance for Data Engineering (DE) & Database Administration (DBA)
 * **Strict Input Validation Schemas:** Implement mandatory input validation at data ingestion points with explicit units (e.g., Price in Millions of IDR, Land/Building Area in $\text{m}^2$, Electricity in VA).
